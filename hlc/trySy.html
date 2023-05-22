@@ -16,10 +16,10 @@
         <img src="../img/logonew.png" alt="" class="logo" />
         <div class="right">
           <ul class="navTop">
-            <li><a href=" " class="active">首页</a></li>
+            <li><a href=" ">首页</a></li>
             <li><a href="../yx/playIndex.html">酷玩</a></li>
             <li><a href="../yx/guideIndex.html">导购</a></li>
-            <li><a href="../hlc/tryIndex.html">试用</a></li>
+            <li><a href="../hlc/tryIndex.html" class="active">试用</a></li>
             <li><a href="reportIndex.html">报告</a></li>
           </ul>
           <div class="register">
@@ -39,7 +39,7 @@
         <!-- 试用，体验师 -->
         <div class="navtopp">
             <div class="navtop1">
-                <a href="./trySy.html" class="actived">大众试用</a>
+                <a href="./trySy.html">大众试用</a>
                 <a href="./tryTys.html">体验师专享</a>
             </div>
         <!-- 全部，申请中，试用中，已结束 -->
@@ -161,7 +161,7 @@
     var result=[]
     var item=document.getElementsByClassName('item')[0];
     window.onload=function(){
-        setTimeout(getData,500)
+        setTimeout(getData,100)
         
         
     }
@@ -174,7 +174,6 @@
         if(ajax.readyState==4){
             if(ajax.status==200){
                 result=JSON.parse(ajax.responseText)
-                console.log(result);
             }
         }
     }
@@ -184,19 +183,22 @@
         for(var i of result){
             str +=`
             <li>
-                <img src="${i.img}" alt="">
-                    <span>${i.info_ty}</span>
+                <a href="./detail.html">
+                    <img src="${i.img}" alt="">
+                    <strong>${i.info_ty}</strong>
                     <div>
                         <h2>${i.text}</h2>
-                        <a>${i.totalnum}</a>
-                        <a>${i.num}</a>
-                        <p><strong>${i.apply}</strong>申请</p>
+                        <span>${i.totalnum}</span>
+                        <span>${i.num}</span>
+                        <p><span class="num">${i.apply}</span>申请</p>
                         <p class="color">报告数量：8</p>
                     </div>
+                    </a>
+                
                 </li>
             `
         }
         item.innerHTML=str
     }
-    setTimeout(showData,1000)
+    setTimeout(showData,500)
 </script>
