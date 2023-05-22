@@ -1,15 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>试用-大众试用（全部）</title>
+    <link rel="stylesheet" href="../css/tryEnd.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>试用-大众试用（已结束）</title>
-</head>
+  <body>
+    <!-- 头部 -->
+    <header>
+      <div class="headContent">
+        <img src="../img/logonew.png" alt="" class="logo" />
+        <div class="right">
+          <ul class="navTop">
+            <li><a href=" " class="active">首页</a></li>
+            <li><a href="../yx/playIndex.html">酷玩</a></li>
+            <li><a href="../yx/guideIndex.html">导购</a></li>
+            <li><a href="../hlc/tryIndex.html">试用</a></li>
+            <li><a href="reportIndex.html">报告</a></li>
+          </ul>
+          <div class="register">
+            <a href="#"></a>
+            <a href="register.html">注册</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- 主题部分 -->
+    <main>
+        <div class="topp">
+            <div class="top">
+                <h2>免费试用</h2>
+            </div>
+        </div>
+        <!-- 试用，体验师 -->
+        <div class="navtopp">
+            <div class="navtop1">
+                <a href="./trySy.html" class="actived">大众试用</a>
+                <a href="./tryTys.html">体验师专享</a>
+            </div>
+        <!-- 全部，申请中，试用中，已结束 -->
+        <div class="navtop2">
+            <div class="navbox">
+            <a href="./tryIndex.html">全部</a>
+            <a href="./trySq.html">申请中</a>
+            <a href="./trySy.html">试用中</a>
+            <a href="./tryEnd.html">已结束</a>
+            </div>
+        </div>
+        </div>
+    </main>
+    <!-- 开始申请数据 -->
+    <div class="shop">
+        <div class="shopping">
+            <ul class="item">
+                <!-- <li>
+                    <img src="../img/hot5.jpg" alt="">
+                    <span>首发</span>
+                    <div>
+                        <h2>巴慕达 The Toaster 烤面包机</h2>
+                        <a>2032</a>
+                        <a>20</a>
+                        <p><strong>1392</strong>申请</p>
+                        <p class="color">报告数量：8</p>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <!-- 底部 -->
+    <footer>
+        <div class="footerContent">
+            <div class="top">
+                <dl>
+                    <img src="../img/code.png" alt="">
+                </dl>
 
-<body>
+                <dl>
+                    <dt>
+                        <img src="../img/logoImg.jpg" alt="">
+                    </dt>
+                    <dd>
+                        全球酷玩试用导购平台<br>
+                        酷·新奇·好玩·品质
+                    </dd>
+                    <dd>
+                        微信添加“JguoJguo”<br>
+                        获取我们的服务。
+                    </dd>
+                </dl>
 
-</body>
+                <dl>
+                    <dt>免费试用</dt>
+                    <dd><a href="help.html">试用流程</a></dd>
+                    <dd><a href="help.html">如何提高成功率</a></dd>
+                </dl>
 
+                <dl>
+                    <dt>友情链接</dt>
+                    <dd>
+                        <a href="#">智东西</a>
+                        <a href="#">WEIBUSI</a>
+                    </dd>
+                    <dd>
+                        <a href="#">搜狐IT</a>
+                        <a href="#">腾讯科技</a>
+                    </dd>
+                    <dd>
+                        <a href="#">搜狐数码</a>
+                        <a href="#">凤凰科技</a>
+                    </dd>
+                    <dd>
+                        <a href="#">凤凰数码</a>
+                        <a href="#">PConline</a>
+                    </dd>
+                    <dd>
+                        <a href="#">泡泡网</a>
+                        <a href="#">3W咖啡</a>
+                    </dd>
+                    <dd>
+                        <a href="#">ZUK社区</a>
+                        <a href="#">亿觅emie</a>
+                    </dd>
+                    <dd>
+                        <a href="#">极客公园</a>
+                        <a href="#">易迅易启玩</a>
+                    </dd>
+                    <dd>
+                        <a href="#">果库</a>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>购买攻略</dt>
+                    <dd><a href="#">美亚海淘教程</a></dd>
+                    <dd><a href="#">日亚海淘教程</a></dd>
+                    <dd><a href="#">海淘转运攻略</a></dd>
+                    <dd><a href="#">kickstarter 众筹购买攻略</a></dd>
+                    <dd><a href="#">indiegogo 众筹购买攻略</a></dd>
+                </dl>
+
+                <dl>
+                    <dt>厂商合作</dt>
+                    <dd><a href="about.html">关于我们</a></dd>
+                    <dd><a href="about.html">联系我们</a></dd>
+                    <dd><a href="#">商务合作：BD@jiguo.com</a></dd>
+                    <dd><a href="#">CEO邮箱：CEO@jiguo.com</a></dd>
+                </dl>
+            </div>
+        </div>
+        <p>© 2016 极果版权所有</p>
+    </footer>
+  </body>
 </html>
+<script>
+    var result=[]
+    var item=document.getElementsByClassName('item')[0];
+    window.onload=function(){
+        setTimeout(getData,500)
+        
+        
+    }
+    function getData(){
+        
+    var ajax=new XMLHttpRequest()||new ActiveXObject('Microsoft.XMLHTTP')
+    ajax.open('get','http://127.0.0.1:3000/useing/master')
+    ajax.send()
+    ajax.onreadystatechange=function(){
+        if(ajax.readyState==4){
+            if(ajax.status==200){
+                result=JSON.parse(ajax.responseText)
+                console.log(result);
+            }
+        }
+    }
+    }
+    function showData(){
+        var str=''
+        for(var i of result){
+            str +=`
+            <li>
+                <img src="${i.img}" alt="">
+                    <span>${i.info_ty}</span>
+                    <div>
+                        <h2>${i.text}</h2>
+                        <a>${i.totalnum}</a>
+                        <a>${i.num}</a>
+                        <p><strong>${i.apply}</strong>申请</p>
+                        <p class="color">报告数量：8</p>
+                    </div>
+                </li>
+            `
+        }
+        item.innerHTML=str
+    }
+    setTimeout(showData,1000)
+</script>

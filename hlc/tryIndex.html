@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>试用-大众试用（全部）</title>
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/try.css" />
   </head>
 
   <body>
@@ -55,8 +55,129 @@
     <!-- 开始申请数据 -->
     <div class="shop">
         <div class="shopping">
-
+            <ul class="item">
+                <!-- <li>
+                    <img src="../img/hot5.jpg" alt="">
+                    <span>首发</span>
+                    <div>
+                        <h2>巴慕达 The Toaster 烤面包机</h2>
+                        <a>2032</a>
+                        <a>20</a>
+                        <p><strong>1392</strong>申请</p>
+                        <p class="color">报告数量：8</p>
+                    </div>
+                </li> -->
+            </ul>
         </div>
     </div>
+    <!-- 底部 -->
+    <footer>
+    <div class="footerContent">
+    <div class="top">
+    <dl>
+     <img src="../img/code.png" alt="">
+    </dl>
+
+    <dl>
+     <dt>
+     <img src="../img/logoImg.jpg" alt="">
+     </dt>
+     <dd>
+     全球酷玩试用导购平台<br>
+     酷·新奇·好玩·品质
+     </dd>
+     <dd>
+     微信添加“JguoJguo”<br>
+    获取我们的服务。
+    </dd>
+    </dl>
+
+    <dl>
+     <dt>免费试用</dt>
+     <dd><a a href=" ">试用流程</a></dd>
+     <dd><a a href="help.html">如何提高成功率</a></dd>
+    </dl>
+
+    <dl>
+    <dt>友情链接</dt>
+     <dd>
+    <a a href="#">智东西</a>
+     <a a href="#">WEIBUSI</a>
+     </dd>
+     <dd>
+    <a a href="#">搜狐IT</a>
+     <a a href="#">腾讯科技</a>
+     </dd>
+     <dd>
+     <a a href="#">搜狐数码</a>
+    <a a href="#">凤凰科技</a>
+     </dd>
+     <dd>
+     <a href="#">凤凰数码</a>
+     <a a href="#">PConline</a>
+     </dd>
+     <dd>
+    <a a href="#">泡泡网</a>
+     <a a href="#">3W咖啡</a>
+     </dd>
+     <dd>
+     <a a href="#">ZUK社区</a>
+     <a a href="#">亿觅emie</a>
+    </dd>
+     <dd>
+     <a a href="#">极客公园</a>
+    <a href="#">易迅易启玩</a>
+     </dd>
+     <dd>
+    <a href="#">果库</a>
+    </dd>
+    </dl>
+
+    <dl>
+   <dt>购买攻略</dt>
+    <dd><a hr
   </body>
 </html>
+<script>
+    var result=[]
+    var item=document.getElementsByClassName('item')[0];
+    window.onload=function(){
+        setTimeout(getData,500)
+        
+        
+    }
+    function getData(){
+        
+    var ajax=new XMLHttpRequest()||new ActiveXObject('Microsoft.XMLHTTP')
+    ajax.open('get','http://127.0.0.1:3000/report/hot')
+    ajax.send()
+    ajax.onreadystatechange=function(){
+        if(ajax.readyState==4){
+            if(ajax.status==200){
+                result=JSON.parse(ajax.responseText)
+                console.log(result);
+            }
+        }
+    }
+    }
+    function showData(){
+        var str=''
+        for(var i of result){
+            str +=`
+            <li>
+                <img src="${i.img}" alt="">
+                    <span>${i.info_ty}</span>
+                    <div>
+                        <h2>${i.text}</h2>
+                        <a>${i.totalnum}</a>
+                        <a>${i.num}</a>
+                        <p><strong>${i.apply}</strong>申请</p>
+                        <p class="color">报告数量：8</p>
+                    </div>
+                </li>
+            `
+        }
+        item.innerHTML=str
+    }
+    setTimeout(showData,1000)
+</script>
