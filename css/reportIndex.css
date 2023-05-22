@@ -2,3 +2,287 @@
   padding: 0;
   margin: 0;
 }
+/* 头部 */
+header {
+  width: 100%;
+  height: 76px;
+  background-color: white;
+  border-bottom: 1px solid #cecfcf;
+  box-shadow: 0 0 5px #cecfcf inset;
+}
+header .headContent {
+  width: 65%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+header .headContent .right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .headContent .right .navTop {
+  display: flex;
+  list-style: none;
+}
+header .headContent .right .navTop li {
+  margin: 0 25px;
+}
+header .headContent .right .navTop li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+}
+header .headContent .right .navTop li a:hover {
+  color: #fe5341;
+}
+header .headContent .right .navTop li .active {
+  color: #fe5341 !important;
+}
+header .headContent .right .register {
+  display: flex;
+  align-items: center;
+}
+header .headContent .right .register a {
+  text-decoration: none;
+  margin-right: 15px;
+}
+header .headContent .right .register a:nth-of-type(1) {
+  width: 25px;
+  height: 25px;
+  background: url(../img/search.png) no-repeat;
+}
+header .headContent .right .register a:nth-of-type(1):hover {
+  transform: scale(1.1);
+}
+header .headContent .right .register a:nth-of-type(2) {
+  border: 1px solid #fe5341;
+  color: #fe5341;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+header .headContent .right .register a:nth-of-type(2):hover {
+  color: white;
+  background-color: #fe5341;
+}
+header .headContent .logo {
+  width: 132px;
+}
+/* 主体 */
+main {
+  width: 100%;
+}
+main .mainTitle {
+  width: 65%;
+  margin: auto;
+}
+main .mainTitle h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  color: #333;
+  padding: 34px 0 30px;
+}
+main .mainTitle .nav {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+}
+main .mainTitle .nav a {
+  width: 165px;
+  text-align: center;
+  line-height: 42px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #a3a3a3;
+}
+main .mainTitle .nav .active1 {
+  color: #fe5341;
+  border-bottom: 5px solid #fe5341;
+}
+main .mainContent {
+  width: 100%;
+  background-color: #F7F7F7;
+}
+main .mainContent .content {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+main .mainContent .content .left {
+  width: 700px;
+  height: 2433px;
+}
+main .mainContent .content .left .item {
+  width: 700px;
+  height: 412px;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 13px;
+}
+main .mainContent .content .left .item a .pic {
+  width: 700px;
+  height: 412px;
+}
+main .mainContent .content .left .item a .info {
+  width: 700px;
+  height: 120px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  bottom: 0;
+  z-index: 2;
+  padding: 10px 22px;
+  box-sizing: border-box;
+}
+main .mainContent .content .left .item a .info p {
+  padding: 9px 0 12px;
+  font-size: 18px;
+  color: #474747;
+}
+main .mainContent .content .left .item a .info .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0 11px;
+}
+main .mainContent .content .left .item a .info .user .userLeft {
+  display: flex;
+  align-items: center;
+}
+main .mainContent .content .left .item a .info .user .userLeft span {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+main .mainContent .content .left .item a .info .user .userLeft span:nth-of-type(1) img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+main .mainContent .content .left .item a .info .user .userLeft span:nth-of-type(2) {
+  color: #fe5341;
+  font-size: 12px;
+}
+main .mainContent .content .left .item a .info .user .userLeft span:nth-of-type(3) {
+  font-size: 12px;
+}
+main .mainContent .content .left .item a .info .user .userRight {
+  display: flex;
+}
+main .mainContent .content .left .item a .info .user .userRight span {
+  padding-left: 15px;
+  margin-right: 5px;
+}
+main .mainContent .content .left .item a .info .user .userRight span:nth-of-type(1) {
+  background: url(../img/zan.png) no-repeat 0px 1px;
+  background-size: 15px 15px;
+}
+main .mainContent .content .left .item a .info .user .userRight span:nth-of-type(2) {
+  background: url(../img/reply.png) no-repeat 0px 1px;
+  background-size: 15px 15px;
+}
+main .mainContent .content .left .look {
+  width: 700px;
+  height: 48px;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  margin-bottom: 13px;
+}
+main .mainContent .content .left .look a {
+  text-decoration: none;
+}
+main .mainContent .content .left .look a .lookText {
+  color: #a3a3a3;
+  line-height: 48px;
+  text-align: center;
+}
+main .mainContent .content .right {
+  width: 270px;
+}
+main .mainContent .content .right h2 {
+  border-left: 6px solid #fe5341;
+  padding-left: 15px;
+  font-size: 18px;
+  color: #474747;
+  font-weight: 500;
+}
+main .mainContent .content .right .pic1 {
+  width: 270px;
+  margin: 25px 0;
+}
+main .mainContent .content .right p {
+  font-weight: 600;
+  padding: 5px 0;
+}
+main .mainContent .content .right span {
+  font-size: 14px;
+  color: #a3a3a3;
+}
+main .mainContent .content .right .attention {
+  padding-top: 40px;
+}
+main .mainContent .content .right .attention .code {
+  width: 100%;
+  height: 120px;
+  background-color: #EBEBEB;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+/* 底部 */
+footer {
+  width: 100%;
+  height: 360px;
+  background-color: #505050;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+footer .footerContent {
+  width: 65%;
+  margin: auto;
+}
+footer .footerContent .top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footerContent .top dl:nth-of-type(1) img {
+  width: 160px;
+  height: 160px;
+}
+footer .footerContent .top dl:nth-of-type(2) dd {
+  margin-top: 13px;
+}
+footer .footerContent .top dl:nth-of-type(4) dd {
+  display: flex;
+  align-items: center;
+}
+footer .footerContent .top dl:nth-of-type(4) dd a {
+  width: 69px;
+  height: 20px;
+}
+footer .footerContent .top dl dt {
+  margin-bottom: 25px;
+  color: white;
+}
+footer .footerContent .top dl dd {
+  font-size: 13px;
+  color: #a3a3a3;
+}
+footer .footerContent .top dl dd a {
+  text-decoration: none;
+  color: #a3a3a3;
+}
+footer p {
+  padding-top: 80px;
+  color: #a3a3a3;
+  font-size: 13px;
+  text-align: center;
+}
