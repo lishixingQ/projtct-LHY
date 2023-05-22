@@ -76,6 +76,7 @@ main {
   /* 热门应用 */
   /* 报告精选 */
   /* 导购精选 */
+  /* 发现酷玩 */
 }
 main .focus {
   width: 100%;
@@ -405,6 +406,107 @@ main .guideSelect .guideContent .guideBox .item .borderBottom {
   width: 220px;
   position: absolute;
   bottom: -12px;
+}
+main .playSelect {
+  width: 100%;
+  background-color: #F7F7F7;
+}
+main .playSelect .playContent {
+  width: 65%;
+  margin: auto;
+}
+main .playSelect .playContent .playTitle {
+  font-weight: 600;
+  font-size: 20px;
+  padding-top: 18px;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+main .playSelect .playContent .playTitle a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #FE5341;
+  padding-right: 17px;
+  background: url(../img/readMore.png) no-repeat 59px 4px;
+  background-size: 13px 13px;
+}
+main .playSelect .playContent .playBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+main .playSelect .playContent .playBox .item {
+  width: 220px;
+  height: 231px;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+main .playSelect .playContent .playBox .item a {
+  text-decoration: none;
+  color: #474747;
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+main .playSelect .playContent .playBox .item a img {
+  width: 220px;
+  height: 130px;
+}
+main .playSelect .playContent .playBox .item a img:hover {
+  animation: flicker 1.5s linear infinite;
+}
+main .playSelect .playContent .playBox .item a .info {
+  padding: 7px 10px 10px;
+}
+main .playSelect .playContent .playBox .item a .info p {
+  font-size: 14px;
+}
+main .playSelect .playContent .playBox .item a .info .user {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  color: #a3a3a3;
+  font-size: 12px;
+}
+main .playSelect .playContent .playBox .item a .info .user .price {
+  color: red;
+  font-size: 16px;
+}
+main .playSelect .playContent .playBox .item a .info .heart {
+  display: flex;
+}
+main .playSelect .playContent .playBox .item a .info .heart span {
+  padding-left: 15px;
+  margin-right: 5px;
+}
+main .playSelect .playContent .playBox .item a .info .heart span:nth-of-type(1) {
+  background: url(../img/xin.png) no-repeat;
+  background-size: 15px 15px;
+}
+main .playSelect .playContent .playBox .item a .info .heart span:nth-of-type(2) {
+  background: url(../img/reply.png) no-repeat;
+  background-size: 15px 15px;
+}
+main .playSelect .playContent .playMore {
+  color: #FE5341;
+  text-align: center;
+  padding: 10px 0 50px;
+  font-weight: 500;
+  cursor: pointer;
+}
+main .playSelect .playContent .playMore span {
+  padding-left: 20px;
+  background: url(../img/more.png) no-repeat 0px 7px;
 }
 /* 底部 */
 footer {

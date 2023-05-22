@@ -535,6 +535,135 @@ main {
             }
         }
     }
+
+    /* 发现酷玩 */
+    .playSelect {
+        width: 100%;
+        background-color: #F7F7F7;
+
+        .playContent {
+            width: 65%;
+            margin: auto;
+
+            .playTitle {
+                font-weight: 600;
+                font-size: 20px;
+                padding-top: 18px;
+                padding-bottom: 16px;
+                display: flex;
+                justify-content: space-between;
+
+                a {
+                    text-decoration: none;
+                    font-size: 14px;
+                    color: #FE5341;
+                    padding-right: 17px;
+
+                    background: url(../img/readMore.png)no-repeat 59px 4px;
+                    background-size: 13px 13px;
+                }
+            }
+
+            .playBox {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .item {
+                    width: 220px;
+                    height: 231px;
+                    border: 1px solid rgb(190, 190, 190);
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+
+                    a {
+                        text-decoration: none;
+                        color: #474747;
+
+                        @keyframes flicker {
+                            0% {
+                                opacity: .3;
+                            }
+
+                            50% {
+                                opacity: .7;
+                            }
+
+                            100% {
+                                opacity: .9;
+                            }
+                        }
+
+                        img {
+                            width: 220px;
+                            height: 130px;
+
+                            &:hover {
+                                animation: flicker 1.5s linear infinite;
+                            }
+                        }
+
+                        .info {
+                            padding: 7px 10px 10px;
+
+                            p {
+                                font-size: 14px;
+                            }
+
+                            .user {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 13px 0;
+                                color: #a3a3a3;
+                                font-size: 12px;
+
+                                .price {
+                                    color: red;
+                                    font-size: 16px;
+                                }
+                            }
+
+                            .heart {
+                                display: flex;
+
+                                span {
+                                    padding-left: 15px;
+                                    margin-right: 5px;
+
+                                    &:nth-of-type(1) {
+                                        background: url(../img/xin.png)no-repeat;
+                                        background-size: 15px 15px;
+                                    }
+
+                                    &:nth-of-type(2) {
+                                        background: url(../img/reply.png)no-repeat;
+                                        background-size: 15px 15px;
+                                    }
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            .playMore {
+                color: #FE5341;
+                text-align: center;
+                padding: 10px 0 50px;
+                font-weight: 500;
+                cursor: pointer;
+
+                span {
+                    padding-left: 20px;
+                    background: url(../img/more.png)no-repeat 0px 7px;
+                }
+            }
+        }
+
+
+    }
 }
 
 /* 底部 */

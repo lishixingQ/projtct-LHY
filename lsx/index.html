@@ -469,6 +469,38 @@
                 </div>
             </div>
         </div>
+
+        <!-- 发现酷玩 -->
+        <div class="playSelect">
+            <div class="playContent">
+                <div class="playTitle">发现酷玩
+                    <a href="#">查看更多</a>
+                </div>
+                <div class="playBox">
+                    <!-- <div class="item">
+                        <a href="../yx/guideDetail.html">
+                            <img src="../img/bg1.jpg" alt="">
+                            <div class="info">
+                                <p>空气净化器里面学问多得惊呆你，你选对了吗？</p>
+                                <div class="user">
+                                    <span class="price">￥1212</span>
+                                    <div class="heart">
+                                        <span>3</span>
+                                        <span>3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div> -->
+
+                </div>
+                <div class="playMore">
+                    <span onclick="getData()">加载更多</span>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <!-- 底部 -->
@@ -558,6 +590,7 @@
 
 </html>
 <script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/ajax.js"></script>
 <script>
     var mySwiper = new Swiper('.swiper', {
         direction: 'horizontal', // 垂直切换选项
@@ -571,5 +604,74 @@
         },
 
         autoplay: true,
-    })        
+    });
+
+
+    // ajax请求发现酷玩数据
+    (function () {
+        var str = '';
+        var playBox = document.getElementsByClassName('playBox')[0];
+        ajax_('get', 'http://127.0.0.1:3000/play/new', function (res) {
+            for (var item of res[0]) {
+                str +=
+                    `
+                <div class="item">
+                        <a href="../yx/guideDetail.html">
+                            <img src="${item.img}" alt="">
+                            <div class="info">
+                                <p>${item.text}</p>
+                                <div class="user">
+                                    <span class="price">${item.price}</span>
+                                    <div class="heart">
+                                        <span>${item.like}</span>
+                                        <span>${item.words}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                `
+            }
+            playBox.innerHTML = str;
+        })
+    })();
+
+    function getData() {
+        var str = '';
+        var playBox = document.getElementsByClassName('playBox')[0];
+        ajax_('get', 'http://127.0.0.1:3000/play/new', function (res) {
+            var dataList = [];
+            dataList = dataList.concat(res[0]);
+            dataList = dataList.concat(res[1]);
+            dataList = dataList.concat(res[2]);
+            dataList = dataList.concat(res[3]);
+            console.log(dataList);
+            for (var item of dataList) {
+                str +=
+                    `
+                <div class="item">
+                        <a href="../yx/guideDetail.html">
+                            <img src="${item.img}" alt="">
+                            <div class="info">
+                                <p>${item.text}</p>
+                                <div class="user">
+                                    <span class="price">${item.price}</span>
+                                    <div class="heart">
+                                        <span>${item.like}</span>
+                                        <span>${item.words}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                `
+            }
+            playBox.innerHTML = str;
+            var playMore = document.getElementsByClassName('playMore')[0];
+            console.log(playMore);
+            playMore.style.display = 'none'
+        })
+    };
 </script>
