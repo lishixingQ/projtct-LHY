@@ -6,10 +6,203 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>酷玩-最热</title>
+    <link rel="stylesheet" href="../css/playHot.css">
 </head>
 
 <body>
+    <header>
+        <div class="headContent">
+            <img src="../img/logonew.png" alt="" class="logo">
+            <div class="right">
+                <ul class="navTop">
+                    <li>
+                        <a href="../lsx/index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="./playIndex.html" class="active">酷玩</a>
+                    </li>
+                    <li>
+                        <a href="./guideIndex.html">导购</a>
+                    </li>
+                    <li>
+                        <a href="../hlc/tryIndex.html">试用</a>
+                    </li>
+                    <li>
+                        <a href="../lsx/reportIndex.html">报告</a>
+                    </li>
+                </ul>
+                <div class="register">
+                    <a href="#"></a>
+                    <a href="register.html">注册</a>
+                </div>
+            </div>
 
+        </div>
+    </header>
+    <h1>发现酷玩</h1>
+    <!--酷玩top-->
+    <nav class="play-nav">
+        <a href="./playIndex.html">最新</a>
+        <a href="./playHot.html" class="on">最热</a>
+        <a href="./playCategory.html">品类</a>
+    </nav>
+    <!--最新-->
+    <main>
+        <ul class="listNew">
+            <!-- <li>
+                <a href="../hlc/detail.html">
+                    <img src="../img/k1.jpg" alt="">
+                    <p class="name">SCiO 微型光谱仪</p>
+                    <span class="introduce">
+                        可以测定食物成分及营养
+                    </span>
+                    <div class="tip">
+                        <div class="tipLeft">
+                            ￥ 1313
+                        </div>
+                        <div class="tipRight">
+                            <span class="like">3</span>
+                            <span class="words">5</span>
+                        </div>
+                    </div>
+                </a>
+            </li> -->
+        </ul>
+    </main>
+    <footer>
+        <div class="footerContent">
+            <div class="top">
+                <dl>
+                    <img src="../img/code.png" alt="">
+                </dl>
+
+                <dl>
+                    <dt>
+                        <img src="../img/logoImg.jpg" alt="">
+                    </dt>
+                    <dd>
+                        全球酷玩试用导购平台<br>
+                        酷·新奇·好玩·品质
+                    </dd>
+                    <dd>
+                        微信添加“JguoJguo”<br>
+                        获取我们的服务。
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>免费试用</dt>
+                    <dd><a href="../lsx/help.html">试用流程</a></dd>
+                    <dd><a href="../lsx/help.html">如何提高成功率</a></dd>
+                </dl>
+
+                <dl>
+                    <dt>友情链接</dt>
+                    <dd>
+                        <a href="#">智东西</a>
+                        <a href="#">WEIBUSI</a>
+                    </dd>
+                    <dd>
+                        <a href="#">搜狐IT</a>
+                        <a href="#">腾讯科技</a>
+                    </dd>
+                    <dd>
+                        <a href="#">搜狐数码</a>
+                        <a href="#">凤凰科技</a>
+                    </dd>
+                    <dd>
+                        <a href="#">凤凰数码</a>
+                        <a href="#">PConline</a>
+                    </dd>
+                    <dd>
+                        <a href="#">泡泡网</a>
+                        <a href="#">3W咖啡</a>
+                    </dd>
+                    <dd>
+                        <a href="#">ZUK社区</a>
+                        <a href="#">亿觅emie</a>
+                    </dd>
+                    <dd>
+                        <a href="#">极客公园</a>
+                        <a href="#">易迅易启玩</a>
+                    </dd>
+                    <dd>
+                        <a href="#">果库</a>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>购买攻略</dt>
+                    <dd><a href="#">美亚海淘教程</a></dd>
+                    <dd><a href="#">日亚海淘教程</a></dd>
+                    <dd><a href="#">海淘转运攻略</a></dd>
+                    <dd><a href="#">kickstarter 众筹购买攻略</a></dd>
+                    <dd><a href="#">indiegogo 众筹购买攻略</a></dd>
+                </dl>
+
+                <dl>
+                    <dt>厂商合作</dt>
+                    <dd><a href="../lsx/about.html">关于我们</a></dd>
+                    <dd><a href="../lsx/about.html">联系我们</a></dd>
+                    <dd><a href="#">商务合作：BD@jiguo.com</a></dd>
+                    <dd><a href="#">CEO邮箱：CEO@jiguo.com</a></dd>
+                </dl>
+            </div>
+        </div>
+        <p>© 2016 极果版权所有</p>
+    </footer>
 </body>
 
 </html>
+<script>
+    window.onload = function () {
+        setTimeout(getDate, 500);
+    };
+    var goodList = [];
+    var listNew = document.getElementsByClassName('listNew')[0];
+    function getDate() {
+        var ajax_ = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+        ajax_.open('get', 'http://127.0.0.1:3000/play/hot');
+        ajax_.send();
+        ajax_.onreadystatechange = function () {
+            if (ajax_.readyState == 4) {
+                if (ajax_.status == 200) {
+                    var json_ = ajax_.responseText;
+                    goodList = JSON.parse(json_);
+                    console.log(goodList);
+                }
+            }
+        }
+    }
+    function showData() {
+        var str = '';
+        for (var item of goodList) {
+            console.log('--------');
+            console.log(item);
+            for (var itemChild of item) {
+                var liItem = `<li>
+                <a href="../hlc/detail.html">
+                    <img src="${itemChild.img}" alt="">
+                    <p class="name">${itemChild.description}</p>
+                    <span class="introduce">
+                        ${itemChild.text}
+                    </span>
+                    <div class="tip">
+                        <div class="tipLeft">
+                            ${itemChild.price}
+                        </div>
+                        <div class="tipRight">
+                            <span class="like">${itemChild.like}</span>
+                            <span class="words">${itemChild.words}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>`
+                str += liItem;
+            }
+        }
+        listNew.innerHTML = str;
+    }
+    setTimeout(showData, 1000);
+
+</script>
