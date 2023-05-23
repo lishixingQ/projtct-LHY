@@ -11,6 +11,164 @@
 
 <body>
 
+    <!-- 头部 -->
+    <header>
+        <div class="headContent">
+            <img src="../img/logonew.png" alt="" class="logo">
+            <div class="right">
+                <ul class="navTop">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="../yx/playIndex.html">酷玩</a></li>
+                    <li><a href="../yx/guideIndex.html">导购</a></li>
+                    <li><a href="../hlc/tryIndex.html">试用</a></li>
+                    <li><a href="reportIndex.html">报告</a></li>
+                </ul>
+                <div class="register">
+                    <a href="#"></a>
+                    <a href="register.html">注册</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 主体 -->
+    <main>
+        <div class="content">
+            <h2 class="title">
+                <span></span>注册极果
+            </h2>
+            <div class="form">
+                <form action="#">
+                    <p>
+                        <input type="text" placeholder="请输入登录手机号" pattern="^1[3-9][0-9]{9}$" required>
+                    </p>
+                    <p>
+                        <input type="text" placeholder="请输入图片校验码" required>
+                        <img src="../img/imgCode.jpg" alt="">
+                    </p>
+                    <p>
+                        <input type="text" placeholder="请输入4位数字验证码" pattern="^\d{4}$">
+                        <span onclick="getCode()" class="code">获取验证码</span>
+                    </p>
+                    <p>
+                        <input type="text" placeholder="请输入用户名" required>
+                    </p>
+                    <p>
+                        <input type="password" placeholder="请输入新密码" required name="psw1">
+                    </p>
+                    <p>
+                        <input type="password" placeholder="确定新密码" required name="psw2">
+                    </p>
+                    <p>
+                        <button class="register">立即注册</button>
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="footerContent">
+            <div class="top">
+                <dl>
+                    <img src="../img/code.png" alt="">
+                </dl>
+
+                <dl>
+                    <dt>
+                        <img src="../img/logoImg.jpg" alt="">
+                    </dt>
+                    <dd>
+                        全球酷玩试用导购平台<br>
+                        酷·新奇·好玩·品质
+                    </dd>
+                    <dd>
+                        微信添加“JguoJguo”<br>
+                        获取我们的服务。
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>免费试用</dt>
+                    <dd><a href="help.html">试用流程</a></dd>
+                    <dd><a href="help.html">如何提高成功率</a></dd>
+                </dl>
+
+                <dl>
+                    <dt>友情链接</dt>
+                    <dd>
+                        <a href="#">智东西</a>
+                        <a href="#">WEIBUSI</a>
+                    </dd>
+                    <dd>
+                        <a href="#">搜狐IT</a>
+                        <a href="#">腾讯科技</a>
+                    </dd>
+                    <dd>
+                        <a href="#">搜狐数码</a>
+                        <a href="#">凤凰科技</a>
+                    </dd>
+                    <dd>
+                        <a href="#">凤凰数码</a>
+                        <a href="#">PConline</a>
+                    </dd>
+                    <dd>
+                        <a href="#">泡泡网</a>
+                        <a href="#">3W咖啡</a>
+                    </dd>
+                    <dd>
+                        <a href="#">ZUK社区</a>
+                        <a href="#">亿觅emie</a>
+                    </dd>
+                    <dd>
+                        <a href="#">极客公园</a>
+                        <a href="#">易迅易启玩</a>
+                    </dd>
+                    <dd>
+                        <a href="#">果库</a>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt>购买攻略</dt>
+                    <dd><a href="#">美亚海淘教程</a></dd>
+                    <dd><a href="#">日亚海淘教程</a></dd>
+                    <dd><a href="#">海淘转运攻略</a></dd>
+                    <dd><a href="#">kickstarter 众筹购买攻略</a></dd>
+                    <dd><a href="#">indiegogo 众筹购买攻略</a></dd>
+                </dl>
+
+                <dl>
+                    <dt>厂商合作</dt>
+                    <dd><a href="about.html">关于极果</a></dd>
+                    <dd><a href="about.html">联系我们</a></dd>
+                    <dd><a href="#">商务合作：BD@jiguo.com</a></dd>
+                    <dd><a href="#">CEO邮箱：CEO@jiguo.com</a></dd>
+                </dl>
+            </div>
+        </div>
+        <p>© 2016 极果版权所有</p>
+    </footer>
 </body>
 
 </html>
+<script>
+    var timer;
+    var num = 60;
+    function getCode() {
+        clearInterval(timer);
+        var code = document.getElementsByClassName('code')[0];
+        timer = setInterval(function () {
+            num--
+            code.innerHTML = `${num}秒后重新发送`
+            if (num == 0) {
+                clearInterval(timer);
+                code.innerHTML = '获取验证码'
+                num = 60
+            }
+        }, 1000)
+    }
+</script>
