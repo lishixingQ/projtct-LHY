@@ -586,6 +586,7 @@
         </div>
         <p>© 2016 极果版权所有</p>
     </footer>
+    <div class="backTop"></div>
 </body>
 
 </html>
@@ -674,4 +675,26 @@
             playMore.style.display = 'none'
         })
     };
+    // 回到顶部
+
+     (function () {
+ window.onscroll = function () {
+  var top = document.documentElement.scrollTop;
+  var backTop = document.getElementsByClassName('backTop')[0];
+  if (top == 0) {
+   backTop.style.display = 'none'
+  } else {
+  backTop.style.display = 'block'
+  }
+  var timer
+  backTop.onclick = function () {
+   timer = setInterval(function () {
+   document.documentElement.scrollTop -= 100
+   if (document.documentElement.scrollTop == 0) {
+   clearInterval(timer);
+   }
+  }, 10)
+  }
+ }
+ })();
 </script>
