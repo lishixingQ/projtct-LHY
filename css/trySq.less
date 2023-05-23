@@ -57,7 +57,7 @@ header {
             height: 25px;
             background: url(../img/search.png) no-repeat;
             &:hover {
-              transform: scale();
+              transform: scale(1.1);
             }
           }
           &:nth-of-type(2) {
@@ -176,6 +176,11 @@ main {
         border-radius: 5px;
         overflow: hidden;
         margin-bottom: 40px;
+        &:hover{
+          img{
+            animation: light 1.5s infinite linear;
+          }
+         }
         a{
           position: relative;
           display: inline-block;
