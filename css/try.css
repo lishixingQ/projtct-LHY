@@ -140,7 +140,6 @@ main .navtopp .navtop2 .navbox a:nth-of-type(1) {
 }
 .shop {
   width: 100%;
-  height: 1650px;
   background-color: #f7f7f7;
   padding-top: 30px;
 }
@@ -239,6 +238,17 @@ main .navtopp .navtop2 .navbox a:nth-of-type(1) {
 .shop .shopping .item li:nth-of-type(15) strong {
   background-color: #fbf4cb;
   color: #c8b09c;
+}
+.shop .shopping .playMore {
+  color: #FE5341;
+  text-align: center;
+  padding: 10px 0 50px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.shop .shopping .playMore span {
+  padding-left: 20px;
+  background: url(../img/more.png) no-repeat 0px 7px;
 }
 footer {
   width: 100%;

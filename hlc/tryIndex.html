@@ -16,7 +16,7 @@
         <img src="../img/logonew.png" alt="" class="logo" />
         <div class="right">
           <ul class="navTop">
-            <li><a href=" ">首页</a></li>
+            <li><a href="../lsx/index.html">首页</a></li>
             <li><a href="../yx/playIndex.html">酷玩</a></li>
             <li><a href="../yx/guideIndex.html">导购</a></li>
             <li><a href="../hlc/tryIndex.html" class="active">试用</a></li>
@@ -71,6 +71,9 @@
                     </a>
                 </li> -->
             </ul>
+            <div class="playMore">
+                    <span onclick="getData()">加载更多</span>
+                </div>
         </div>
     </div>
     <!-- 底部 -->
@@ -158,31 +161,15 @@
     </footer>
   </body>
 </html>
+<script src="../js/ajax.js"></script>
 <script>
-    var result=[]
-    var item=document.getElementsByClassName('item')[0];
-    window.onload=function(){
-        setTimeout(getData,100)
-    }
-    function getData(){
-        
-    var ajax=new XMLHttpRequest()||new ActiveXObject('Microsoft.XMLHTTP')
-    ajax.open('get','http://127.0.0.1:3000/report/hot')
-    ajax.send()
-    ajax.onreadystatechange=function(){
-        if(ajax.readyState==4){
-            if(ajax.status==200){
-                result=JSON.parse(ajax.responseText)
-
-            }
-        }
-    }
-    }
-    function showData(){
-        var str=''
-        for(var i of result){
-            str +=`
-            <li>
+    ajax_('get', 'http://127.0.0.1:3000/report/hot', function (res) {
+        var item = document.getElementsByClassName('item')[0];
+        res.length = 12;
+        for (var i of res) {
+            item.innerHTML +=
+                `
+                <li>
                 <a href="./detail.html">
                     <img src="${i.img}" alt="">
                     <strong>${i.info_ty}</strong>
@@ -198,7 +185,34 @@
                 </li>
             `
         }
-        item.innerHTML=str
+    })
+
+    function getData() {
+        ajax_('get', 'http://127.0.0.1:3000/report/hot', function (res) {
+            var item = document.getElementsByClassName('item')[0];
+            res.length = 16;
+            for (var i of res) {
+                item.innerHTML +=
+                    `
+                    <li>
+                <a href="./detail.html">
+                    <img src="${i.img}" alt="">
+                    <strong>${i.info_ty}</strong>
+                    <div>
+                        <h2>${i.text}</h2>
+                        <span>${i.totalnum}</span>
+                        <span>${i.num}</span>
+                        <p><span class="num">${i.apply}</span>申请</p>
+                        <p class="color">报告数量：8</p>
+                    </div>
+                    </a>
+                
+                </li>
+            `
+            }
+        })
+        var playMore = document.getElementsByClassName('playMore')[0];
+        console.log(playMore);
+        playMore.style.display = 'none'
     }
-    setTimeout(showData,500)
 </script>
