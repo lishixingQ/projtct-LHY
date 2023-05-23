@@ -102,16 +102,20 @@ h1 {
   color: #FE5431;
 }
 main {
+  padding-bottom: 50px;
   width: 100%;
-  height: 2188px;
   background-color: #F7F7F7;
   overflow: hidden;
 }
 main .listNew {
   width: 60%;
-  height: 2188px;
   margin: 0 auto;
   margin-top: 20px;
+}
+main .listNew::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 main .listNew li {
   float: left;
@@ -202,6 +206,20 @@ main .listNew li a .tip .tipRight .words {
   padding-left: 18px;
   box-sizing: border-box;
   background: url(../img/reply.png) no-repeat 3px 5px;
+}
+main .playMore {
+  width: 60%;
+  margin: 0 auto;
+  height: 30px;
+  color: #fe5341;
+  text-align: center;
+  padding: 10px 0 0px;
+  font-weight: 500;
+  cursor: pointer;
+}
+main .playMore span {
+  padding-left: 20px;
+  background: url(../img/more.png) no-repeat 0px 7px;
 }
 footer {
   width: 100%;

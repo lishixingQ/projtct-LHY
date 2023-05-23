@@ -58,6 +58,9 @@
                 </a>
             </li> -->
         </ul>
+        <div class="playMore">
+            <span onclick="getData()">加载更多</span>
+        </div>
     </main>
     <!-- 底部 -->
     <footer>
@@ -145,32 +148,13 @@
 </body>
 
 </html>
+<script src="../js/ajax.js"></script>
 <script>
-    window.onload = function () {
-        setTimeout(getDate, 50)
-    }
-    var listNew = document.getElementsByClassName('listNew')[0];
-    var goodList = [];
-    function getDate() {
-        var ajax_ = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
-        ajax_.open('get', 'http://127.0.0.1:3000/guid/new');
-        ajax_.send();
-        ajax_.onreadystatechange = function () {
-            if (ajax_.readyState == 4) {
-                if (ajax_.status == 200) {
-                    var json_ = ajax_.responseText;
-                    goodList = JSON.parse(json_);
-                    // console.log(goodList);
-                }
-            }
-        }
-    }
-    function showData() {
-        var str = '';
-        for (var item of goodList) {
-            // console.log('--------');
-            // console.log(item);
-            var liItem = ` <li>
+    ajax_('get', 'http://127.0.0.1:3000/guid/new', function (res) {
+        var listNew = document.getElementsByClassName('listNew')[0];
+        res.length = 8;
+        for (var item of res) {
+            listNew.innerHTML += ` <li>
                 <a href="./guideDetail.html">
                     <img src="${item.img}" alt="">
                     <div class="bottom">
@@ -181,9 +165,27 @@
                     <span class="line"><img src="../img/listbg.jpg" alt=""></span>
                 </a>
             </li>`
-            str += liItem;
         }
-        listNew.innerHTML = str;
+    });
+    function getData() {
+        ajax_('get', 'http://127.0.0.1:3000/guid/new', function (res) {
+            var listNew = document.getElementsByClassName('listNew')[0];
+            res.length = 15;
+            for (var item of res) {
+                listNew.innerHTML += ` <li>
+                <a href="./guideDetail.html">
+                    <img src="${item.img}" alt="">
+                    <div class="bottom">
+                        <p>${item.text}</p>
+                        <span class="num1">${item.like}</span>
+                        <span class="num2">${item.words}</span>
+                    </div>
+                    <span class="line"><img src="../img/listbg.jpg" alt=""></span>
+                </a>
+            </li>`
+            }
+        })
+        var playMore = document.getElementsByClassName('playMore')[0];
+        playMore.style.display = 'none';
     }
-    setTimeout(showData, 100);
 </script>

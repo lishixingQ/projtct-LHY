@@ -68,6 +68,9 @@
                 </a>
             </li> -->
         </ul>
+        <div class="playMore">
+            <span onclick="getData()">加载更多</span>
+        </div>
     </main>
     <!-- 底部 -->
     <footer>
@@ -155,33 +158,45 @@
 </body>
 
 </html>
+<script src="../js/ajax.js"></script>
 <script>
-    window.onload = function () {
-        setTimeout(getDate, 50);
-    };
-    var goodList = [];
-    var listNew = document.getElementsByClassName('listNew')[0];
-    function getDate() {
-        var ajax_ = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
-        ajax_.open('get', 'http://127.0.0.1:3000/play/new');
-        ajax_.send();
-        ajax_.onreadystatechange = function () {
-            if (ajax_.readyState == 4) {
-                if (ajax_.status == 200) {
-                    var json_ = ajax_.responseText;
-                    goodList = JSON.parse(json_);
-                    console.log(goodList);
-                }
-            }
-        }
-    }
-    function showData() {
+    (function () {
         var str = '';
-        for (var item of goodList) {
-            console.log('--------');
-            console.log(item);
-            for (var itemChild of item) {
-                var liItem = `<li>
+        var listNew = document.getElementsByClassName('listNew')[0];
+        ajax_('get', 'http://127.0.0.1:3000/play/new', function (res) {
+            for (var item of res[0]) {
+
+                str += `<li>
+                 <a href="../hlc/detail.html">
+                     <img src="${item.img}" alt="">
+                     <p class="name">${item.description}</p>
+                     <span class="introduce">
+                        ${item.text}
+                     </span>
+                     <div class="tip">
+                         <div class="tipLeft">
+                             ${item.price}
+                         </div>
+                         <div class="tipRight">
+                             <span class="like">${item.like}</span>
+                             <span class="words">${item.words}</span>
+                         </div>
+                     </div>
+                 </a>
+            </li>`
+            }
+            listNew.innerHTML = str;
+        })
+
+    })();
+    function getData() {
+        var str = '';
+        var listNew = document.getElementsByClassName('listNew')[0];
+        ajax_('get', 'http://127.0.0.1:3000/play/new', function (res) {
+            for (var item of res) {
+                for (var itemChild of item) {
+                    console.log(itemChild);
+                    str += `<li>
                 <a href="../hlc/detail.html">
                     <img src="${itemChild.img}" alt="">
                     <p class="name">${itemChild.description}</p>
@@ -199,11 +214,15 @@
                     </div>
                 </a>
             </li>`
-                str += liItem;
+                }
             }
-        }
-        listNew.innerHTML = str;
+            listNew.innerHTML = str;
+            var playMore = document.getElementsByClassName('playMore')[0];
+            console.log(playMore);
+            playMore.style.display = 'none';
+
+        })
     }
-    setTimeout(showData, 100);
+
 
 </script>

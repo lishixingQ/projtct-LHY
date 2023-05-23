@@ -131,17 +131,23 @@ h1 {
 }
 
 main {
+    padding-bottom: 50px;
     width: 100%;
-    height: 2188px;
+    // height: 2188px;
     background-color: #F7F7F7;
     overflow: hidden;
 
     .listNew {
         width: 60%;
-        height: 2188px;
+        // height: 2188px;
         margin: 0 auto;
         margin-top: 20px;
 
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
 
         li {
             float: left;
@@ -222,7 +228,6 @@ main {
                     width: 100%;
                     height: 50px;
 
-
                     .tipLeft {
                         width: 80px;
                         height: 50px;
@@ -255,6 +260,23 @@ main {
                     }
                 }
             }
+        }
+    }
+
+    .playMore {
+        width: 60%;
+        margin: 0 auto;
+        height: 30px;
+        color: #fe5341;
+        text-align: center;
+        padding: 10px 0 0px;
+        font-weight: 500;
+        cursor: pointer;
+
+
+        span {
+            padding-left: 20px;
+            background: url(../img/more.png) no-repeat 0px 7px;
         }
     }
 }
