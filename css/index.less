@@ -580,17 +580,51 @@ main {
                         text-decoration: none;
                         color: #474747;
 
-                        @keyframes flicker {
-                            0% {
-                                opacity: .3;
+                        @-webkit-keyframes fade {
+
+                            0%,
+                            100% {
+                                opacity: 1;
                             }
 
                             50% {
-                                opacity: .7;
+                                opacity: 0.6;
+                            }
+                        }
+
+                        @-moz-keyframes fade {
+
+                            0%,
+                            100% {
+                                opacity: 1;
                             }
 
+                            50% {
+                                opacity: 0.6;
+                            }
+                        }
+
+                        @-ms-keyframes fade {
+
+                            0%,
                             100% {
-                                opacity: .9;
+                                filter: alpha(opacity=100);
+                            }
+
+                            50% {
+                                filter: alpha(opacity=60);
+                            }
+                        }
+
+                        @keyframes fade {
+
+                            0%,
+                            100% {
+                                opacity: 1;
+                            }
+
+                            50% {
+                                opacity: 0.6;
                             }
                         }
 
@@ -599,7 +633,7 @@ main {
                             height: 130px;
 
                             &:hover {
-                                animation: flicker 1.5s linear infinite;
+                                animation: fade 1.5s linear infinite;
                             }
                         }
 

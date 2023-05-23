@@ -45,32 +45,38 @@
         <div class="mainContent">
             <div class="content">
                 <div class="left">
-                    <div class="item">
-                        <a href="../yx/guideDetail.html">
-                            <img src="../img/bg1.jpg" alt="" class="pic">
-                            <div class="info">
-                                <p>云马智行车 C1小巧清新，简洁流畅的线条为城市骑行增添一抹亮丽色彩</p>
-                                <div class="user">
-                                    <div class="userLeft">
-                                        <span><img src="../img/tx.jpg" alt=""></span>
-                                        <span>苏苏</span>
-                                        <span>2016-01-25</span>
-                                    </div>
-                                    <div class="userRight">
-                                        <span>3</span>
-                                        <span>3</span>
+                    <div class="itemBox">
+                        <!-- <div class="item">
+                            <a href="../yx/guideDetail.html">
+                                <img src="../img/bg1.jpg" alt="" class="pic">
+                                <div class="info">
+                                    <p>云马智行车 C1小巧清新，简洁流畅的线条为城市骑行增添一抹亮丽色彩</p>
+                                    <div class="user">
+                                        <div class="userLeft">
+                                            <span><img src="../img/tx.jpg" alt=""></span>
+                                            <span>苏苏</span>
+                                            <span>2016-01-25</span>
+                                        </div>
+                                        <div class="userRight">
+                                            <span>3</span>
+                                            <span>3</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="look">
-                        <a href="../yx/guideDetail.html">
-                            <div class="lookText">
-                                关于格林威特空气净化器还有 4 篇报告，点击查看
-                            </div>
+                            </a>
+                        </div>
+                        <div class="look">
+                            <a href="../yx/guideDetail.html">
+                                <div class="lookText">
+                                    关于格林威特空气净化器还有 4 篇报告，点击查看
+                                </div>
 
-                        </a>
+                            </a>
+                        </div> -->
+                    </div>
+
+                    <div class="playMore">
+                        <span onclick="getData()">加载更多</span>
                     </div>
                 </div>
                 <div class=" right">
@@ -177,7 +183,7 @@
 
                 <dl>
                     <dt>厂商合作</dt>
-                    <dd><a href="about.html">关于我们</a></dd>
+                    <dd><a href="about.html">关于极果</a></dd>
                     <dd><a href="about.html">联系我们</a></dd>
                     <dd><a href="#">商务合作：BD@jiguo.com</a></dd>
                     <dd><a href="#">CEO邮箱：CEO@jiguo.com</a></dd>
@@ -189,3 +195,84 @@
 </body>
 
 </html>
+<script src="../js/ajax.js"></script>
+<script>
+    ajax_('get', 'http://127.0.0.1:3000/report/new', function (res) {
+        var itemBox = document.getElementsByClassName('itemBox')[0];
+        res.length = 5;
+        for (var item of res) {
+            itemBox.innerHTML +=
+                `
+            <div class="item">
+                            <a href="../yx/guideDetail.html">
+                                <img src="${item.img}" alt="" class="pic">
+                                <div class="info">
+                                    <p>${item.text}</p>
+                                    <div class="user">
+                                        <div class="userLeft">
+                                            <span><img src="../img/tx.jpg" alt=""></span>
+                                            <span>${item.uName}</span>
+                                            <span>${item.endTime}</span>
+                                        </div>
+                                        <div class="userRight">
+                                            <span>3</span>
+                                            <span>3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="look">
+                            <a href="../yx/guideDetail.html">
+                                <div class="lookText">
+                                    关于格林威特空气净化器还有 4 篇报告，点击查看
+                                </div>
+
+                            </a>
+                        </div>
+            `
+        }
+    })
+
+    function getData() {
+        ajax_('get', 'http://127.0.0.1:3000/report/new', function (res) {
+            var itemBox = document.getElementsByClassName('itemBox')[0];
+            res.length = 12;
+            for (var item of res) {
+                itemBox.innerHTML +=
+                    `
+            <div class="item">
+                            <a href="../yx/guideDetail.html">
+                                <img src="${item.img}" alt="" class="pic">
+                                <div class="info">
+                                    <p>${item.text}</p>
+                                    <div class="user">
+                                        <div class="userLeft">
+                                            <span><img src="../img/tx.jpg" alt=""></span>
+                                            <span>${item.uName}</span>
+                                            <span>${item.endTime}</span>
+                                        </div>
+                                        <div class="userRight">
+                                            <span>3</span>
+                                            <span>3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="look">
+                            <a href="../yx/guideDetail.html">
+                                <div class="lookText">
+                                    关于格林威特空气净化器还有 4 篇报告，点击查看
+                                </div>
+
+                            </a>
+                        </div>
+            `
+            }
+        })
+        var playMore = document.getElementsByClassName('playMore')[0];
+        console.log(playMore);
+        playMore.style.display = 'none'
+    }
+</script>

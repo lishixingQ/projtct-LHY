@@ -142,114 +142,182 @@ main {
 
             .left {
                 width: 700px;
-                height: 2433px;
 
-                .item {
-                    width: 700px;
-                    height: 412px;
-                    border: 1px solid rgb(170, 170, 170);
-                    border-radius: 5px;
-                    overflow: hidden;
-                    position: relative;
-                    margin-bottom: 13px;
+                .itemBox {
+                    .item {
+                        width: 700px;
+                        height: 412px;
+                        border: 1px solid rgb(170, 170, 170);
+                        border-radius: 5px;
+                        overflow: hidden;
+                        position: relative;
+                        margin-bottom: 13px;
 
-                    a {
-                        .pic {
-                            width: 700px;
-                            height: 412px;
-                        }
+                        a {
+                            @-webkit-keyframes fade {
 
-                        .info {
-                            width: 700px;
-                            height: 120px;
-                            position: absolute;
-                            background-color: rgba(255, 255, 255, .9);
-                            bottom: 0;
-                            z-index: 2;
-                            padding: 10px 22px;
-                            box-sizing: border-box;
-
-                            p {
-                                padding: 9px 0 12px;
-                                font-size: 18px;
-                                color: #474747;
-                            }
-
-                            .user {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                padding: 16px 0 11px;
-
-                                .userLeft {
-                                    display: flex;
-                                    align-items: center;
-
-                                    span {
-                                        display: flex;
-                                        align-items: center;
-                                        margin-right: 15px;
-
-                                        &:nth-of-type(1) {
-                                            img {
-                                                width: 20px;
-                                                height: 20px;
-
-                                                border-radius: 50%;
-                                            }
-                                        }
-
-                                        &:nth-of-type(2) {
-                                            color: #fe5341;
-                                            font-size: 12px;
-                                        }
-
-                                        &:nth-of-type(3) {
-                                            font-size: 12px;
-                                        }
-                                    }
+                                0%,
+                                100% {
+                                    opacity: 1;
                                 }
 
-                                .userRight {
+                                50% {
+                                    opacity: 0.6;
+                                }
+                            }
+
+                            @-moz-keyframes fade {
+
+                                0%,
+                                100% {
+                                    opacity: 1;
+                                }
+
+                                50% {
+                                    opacity: 0.6;
+                                }
+                            }
+
+                            @-ms-keyframes fade {
+
+                                0%,
+                                100% {
+                                    filter: alpha(opacity=100);
+                                }
+
+                                50% {
+                                    filter: alpha(opacity=60);
+                                }
+                            }
+
+                            @keyframes fade {
+
+                                0%,
+                                100% {
+                                    opacity: 1;
+                                }
+
+                                50% {
+                                    opacity: 0.6;
+                                }
+                            }
+
+                            .pic {
+                                width: 700px;
+                                height: 412px;
+
+                                &:hover {
+                                    animation: fade 1.5s linear infinite;
+                                }
+                            }
+
+                            .info {
+                                width: 700px;
+                                height: 120px;
+                                position: absolute;
+                                background-color: rgba(255, 255, 255, .9);
+                                bottom: 0;
+                                z-index: 2;
+                                padding: 10px 22px;
+                                box-sizing: border-box;
+
+                                p {
+                                    padding: 9px 0 12px;
+                                    font-size: 18px;
+                                    color: #474747;
+                                }
+
+                                .user {
                                     display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding: 16px 0 11px;
 
-                                    span {
-                                        padding-left: 15px;
-                                        margin-right: 5px;
+                                    .userLeft {
+                                        display: flex;
+                                        align-items: center;
 
-                                        &:nth-of-type(1) {
-                                            background: url(../img/zan.png)no-repeat 0px 1px;
-                                            background-size: 15px 15px;
+                                        span {
+                                            display: flex;
+                                            align-items: center;
+                                            margin-right: 15px;
+
+                                            &:nth-of-type(1) {
+                                                img {
+                                                    width: 20px;
+                                                    height: 20px;
+
+                                                    border-radius: 50%;
+                                                }
+                                            }
+
+                                            &:nth-of-type(2) {
+                                                color: #fe5341;
+                                                font-size: 12px;
+                                            }
+
+                                            &:nth-of-type(3) {
+                                                font-size: 12px;
+                                            }
                                         }
+                                    }
 
-                                        &:nth-of-type(2) {
-                                            background: url(../img/reply.png)no-repeat 0px 1px;
-                                            background-size: 15px 15px;
+                                    .userRight {
+                                        display: flex;
+
+                                        span {
+                                            padding-left: 15px;
+                                            margin-right: 5px;
+
+                                            &:nth-of-type(1) {
+                                                background: url(../img/zan.png)no-repeat 0px 1px;
+                                                background-size: 15px 15px;
+                                            }
+
+                                            &:nth-of-type(2) {
+                                                background: url(../img/reply.png)no-repeat 0px 1px;
+                                                background-size: 15px 15px;
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
+
+                    .look {
+                        width: 700px;
+                        height: 48px;
+                        border: 1px solid rgb(170, 170, 170);
+                        border-radius: 5px;
+                        margin-bottom: 13px;
+
+
+                        a {
+                            text-decoration: none;
+
+
+                            .lookText {
+                                color: #a3a3a3;
+                                line-height: 48px;
+                                text-align: center;
+                            }
+                        }
+                    }
                 }
 
-                .look {
-                    width: 700px;
-                    height: 48px;
-                    border: 1px solid rgb(170, 170, 170);
-                    border-radius: 5px;
-                    margin-bottom: 13px;
 
 
-                    a {
-                        text-decoration: none;
+                .playMore {
+                    color: #FE5341;
+                    text-align: center;
+                    padding: 10px 0 50px;
+                    font-weight: 500;
+                    cursor: pointer;
 
-
-                        .lookText {
-                            color: #a3a3a3;
-                            line-height: 48px;
-                            text-align: center;
-                        }
+                    span {
+                        padding-left: 20px;
+                        background: url(../img/more.png)no-repeat 0px 7px;
                     }
                 }
             }
