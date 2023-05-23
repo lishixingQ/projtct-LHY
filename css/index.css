@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 * {
   padding: 0;
   margin: 0;
@@ -263,7 +261,7 @@ main .reportSelect .reportContent .reportBox {
   flex-wrap: wrap;
 }
 main .reportSelect .reportContent .reportBox .item {
-  width: 220px;
+  width: 250px;
   height: 231px;
   border: 1px solid #bebebe;
   border-radius: 5px;
@@ -285,7 +283,7 @@ main .reportSelect .reportContent .reportBox .item a {
   }
 }
 main .reportSelect .reportContent .reportBox .item a img {
-  width: 220px;
+  width: 250px;
   height: 130px;
 }
 main .reportSelect .reportContent .reportBox .item a img:hover {
@@ -439,7 +437,7 @@ main .playSelect .playContent .playBox {
   flex-wrap: wrap;
 }
 main .playSelect .playContent .playBox .item {
-  width: 220px;
+  width: 250px;
   height: 231px;
   border: 1px solid #bebebe;
   border-radius: 5px;
@@ -486,7 +484,7 @@ main .playSelect .playContent .playBox .item a {
   }
 }
 main .playSelect .playContent .playBox .item a img {
-  width: 220px;
+  width: 250px;
   height: 130px;
 }
 main .playSelect .playContent .playBox .item a img:hover {
@@ -586,4 +584,3 @@ footer p {
   font-size: 13px;
   text-align: center;
 }
->>>>>>> 50006750747303a29c7eab084f75ef70ca737c29

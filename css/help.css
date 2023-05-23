@@ -80,7 +80,7 @@ main .content {
   height: 100%;
   padding: 50px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   box-sizing: border-box;
 }
 main .content .left {
